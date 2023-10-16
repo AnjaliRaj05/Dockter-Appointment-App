@@ -1,0 +1,61 @@
+.registermain-page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 90px;
+    background-image: url(../Components/d2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;  
+
+}
+.registermain-page > div:hover{
+    background: transparent;
+}
+
+.form-container{
+    background: white;
+    width: 800px;
+    height: 600px;
+    padding: 100px 190px;
+    border-radius: 50px;
+    /* box-shadow:10px 8px 8px ; */
+}
+.register-form{
+/* background-color: brown; */
+/* background:white; */
+/* border-radius: 20px; */
+
+
+}
+
+.register-page{
+     /* background:red;
+     width: 800px;
+     height: 500px;
+     margin: 30px;
+     box-shadow:10px 8px 8px; */
+}
+
+form{
+    
+    width: 400px;
+    height:400px;
+    box-sizing: border-box;
+    /* box-shadow:10px 8px 8px ; */
+}
+.login-page{
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,40,142,1) 23%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+    }
+.lf{
+    margin-top:30px;
+}
+.login-btn-btn{
+    margin-left: 50px;
+    padding:12px 120px;
+    background: linear-gradient(60deg, rgba(2,0,36,1) 0%, rgba(8,40,142,1) 2%, rgba(9,9,121,1) 1%, rgba(0,212,255,1) 100%); 
+    border: none;
+    border-radius:4px;
+}

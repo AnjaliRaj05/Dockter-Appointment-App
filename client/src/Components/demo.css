@@ -1,0 +1,80 @@
+
+
+.ff-page{
+    /* background:skyblue; */
+    background-color: #bae8e8;
+}
+.outside-form{
+    /* background:yellowgreen; */
+    background-color:#272343;
+
+    height:650px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 1500px;
+    /* margin-left: 400px; */
+    
+    
+}
+.main-form{
+    margin-top: 40px;
+    width:900px;
+    height:600px;
+    /* background:red; */
+    display: flex;
+    margin-right: 150px;
+    border-radius: 20px;
+    background:white;
+    box-shadow: 0px 0px 8px 0px;
+   
+    
+}
+.left-part{
+    /* background:blue; */
+    width: 400px;
+    margin-left: 50px;
+
+}
+.right-part{
+    /* background:green; */
+    width: 400px;
+    
+}
+.left-left-prt{
+    /* background:red; */
+    margin-top:40px;
+}
+.right-right-prt{
+    /* background:red; */
+    margin-top:40px;
+    
+}
+.f-btn-btn{
+    margin-top:600px;
+    
+}
+.f-bottom{
+    color:white;
+    /* background: #bae8e8 red yellow ; */
+    background: rgb(2,0,36);
+background: linear-gradient(60deg, rgba(2,0,36,1) 0%, rgba(8,40,142,1) 2%, rgba(9,9,121,1) 1%, rgba(0,212,255,1) 100%);  
+    padding: 10px 75px;
+    border-radius: 10px;
+    margin-top: 70px;
+    margin-left: 70px;
+    align-items: center;
+   
+}
+img{
+    height: 200px;
+    width: 200px;
+    margin-top:100px; 
+    margin-left: 100px;  
+}
+.doct-text{
+    color: white;
+    /* text-align: center; */
+    margin-bottom: 1000px;
+    margin-left: 80px;
+}

@@ -1,0 +1,73 @@
+.doctor-form{
+    width: 100%;
+}
+
+.okkk3{
+ background: white;
+ width: 1000px;
+ height:600px;
+ box-shadow: 0 0 0 0 ;
+ margin-left:300px;
+ display: flex;
+ justify-content: center;
+ /* margin: 30px; */
+ 
+}
+.d-btn{
+    /* display: flex;
+    justify-content: center; */
+    width: 250px !important;
+    margin-top:30px !important;
+}
+
+.doctor-form{
+    /* border: 1px solid gray; */
+    /* border-radius: 10px; */
+    /* padding:30px;  */
+    width:100%;
+    
+    
+}
+.d1{
+    border: none;
+    box-shadow: 0;
+
+}
+/* .d-left{
+    width:300px;
+} */
+
+.appointment-container-box{
+    height:100%;
+    width: 100%;
+    background:#272343;
+   /* margin-left: 550px; */
+    
+}
+
+.appointment-container2{
+    background:white;
+    width: 800px;
+    height: 600px;
+    margin-left: 600px;
+    position: absolute;
+    margin-top: 30px;
+    display: flex;
+    justify-content:center;
+    border-radius: 100px 0px 0px 100px;
+       
+    }
+.appointment-container1{
+    margin-top:100px;
+    height: 200px;
+    color: black;
+    /* background-color: aqua; */
+}
+
+.appointment-container3{
+    background:red;
+    width:400px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction:column;
+}
