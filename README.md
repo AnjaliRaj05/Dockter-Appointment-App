@@ -1,3 +1,4 @@
+#https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius
 ![Screenshot (1309)](https://github.com/AnjaliRaj05/Dockter-Appointment-App/assets/92683584/634c2d32-e2a2-411d-b490-109099fd8d79)
 ![Screenshot (1310)](https://github.com/AnjaliRaj05/Dockter-Appointment-App/assets/92683584/24811068-58b8-4e2a-a7f3-623fcc2f7ae4)
 ![Screenshot (1312)](https://github.com/AnjaliRaj05/Dockter-Appointment-App/assets/92683584/91f64697-5c8d-4d86-b0fb-6d690966f425)
