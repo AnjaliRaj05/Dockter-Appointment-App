@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import Layout from '../../Components/Layout'
 import axios from 'axios'
-//import { render } from '@testing-library/react';
 import { Table } from 'antd';
 const Users = () => {
   const [users ,setUsers] = useState([]);
@@ -24,6 +23,26 @@ const Users = () => {
   useEffect(()=>{
     getUsers();
   },[]);
+
+  const blockUsers = async(userId)=>{
+    try {
+      // Send a request to the server to block the user
+      const res = await axios.post('/api/v1/admin/blockUser', { userId }, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      if (res.data.success) {
+        console.log('User blocked successfully.');
+        // Optionally, update the user list or perform other actions
+        getUsers();
+      } else {
+        console.error('Failed to block user:', res.data.message);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  }
   // antd table col
   const columns=[{
     title: 'Name',
@@ -42,19 +61,19 @@ const Users = () => {
     <span>{record.isDoctor ? 'yes':'No'}</span>
    )
 },
-{
-  title:'Actions',
-  dataIndex:'actions',
-  render:(text,record)=>(
-    <div className="d-flex">
-      <button className="btn btn-danger">Block</button>
-    </div>
-  ),
-},
+// {
+//   title:'Actions',
+//   dataIndex:'actions',
+//   render:(text,record)=>(
+//     <div className="d-flex">
+//   <button className="btn btn-danger" onClick={() => blockUsers(record.userId)}>Block</button>
+//     </div>
+//   ),
+// },
 ];
   return (
     <Layout>
-      <h1 className="text-center m-2">this is user list</h1>
+      <h1 className="text-center m-2">All Users List</h1>
       <Table columns={columns} dataSource={users}/>
 
     </Layout>

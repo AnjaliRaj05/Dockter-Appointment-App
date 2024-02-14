@@ -18,19 +18,20 @@ const getAllUsersControllers = async(req,res)=>{
     });
   }
 };
+
 const getAllDoctorsControllers=async(req, res)=>{
   try{
     const doctors =await doctorModel.find({});
     res.status(200).send({
         success: true,
-        message:'Doctors data list',
+        message:'Doctors data list feched suceessfully',
         data: doctors,
     });
   } catch(error){
     console.log(error);
     res.status(500).send({
         success: false,
-        message:'error  while getting doctors data',
+        message:'error  while feching doctors data',
         error,
     });
   }
@@ -47,12 +48,11 @@ try{
       type:"doctor-account-request-updated",
       message:`your Doctor Account Request Has ${status}`,
       onclickPath: "/notification",
-//chcek the path later it is wrong witten ig
+//check the path later it is wrong witten ig
     });
-    
-    user.isDocter = status === 'approved' ? true : false;
-    await user.save();
   
+    user.isDoctor = status === 'approved' ? true : false;
+    await user.save();
     res.status(201).send({
       success: true,
       message:'Account status updated',
@@ -69,5 +69,8 @@ try{
 }
 };
 
-  
-module.exports={getAllDoctorsControllers,getAllUsersControllers,changeAccountStatusControllers};
+  const blockUserControllers = async (req, res) => {
+
+    
+  };
+module.exports={getAllDoctorsControllers,getAllUsersControllers,changeAccountStatusControllers,blockUserControllers};

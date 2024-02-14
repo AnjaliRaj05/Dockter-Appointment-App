@@ -7,4 +7,5 @@ const connectDB=async()=>{
    console.log('mongo db connected ${error}')
     }
 };
+
 module.exports=connectDB;

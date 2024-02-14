@@ -241,9 +241,12 @@ res.status(500).send({
 const appointmentsListController = async(req,res)=>
 {
   try{
+   const userId = req.query.userId;
+   console.log('Received request for user ID:', userId);
    const appointments = await appointmentModel.find({
-    userId: req.body.userId,
+    userId: userId,
    });
+   console.log('Appointments found:', appointments);
    res.status(200).send({
     success:true,
     message:'Users Appointments Fetch Successfully',

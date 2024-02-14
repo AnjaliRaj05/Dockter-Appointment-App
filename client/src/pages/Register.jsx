@@ -81,7 +81,7 @@ const  navigate=useNavigate();
     <> 
     <div className="registermain-page">
     <div className="register-page">
-      {/* <h1 className="reg"> We Care for You! </h1> */}
+     
      </div> 
       <div className="form-container ">
         <Form

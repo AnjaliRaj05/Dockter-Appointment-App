@@ -28,7 +28,7 @@ try{
   return (
    
     <Layout>
-    <h1 className="text-center">Homepage</h1>
+    <h1 className="text-center">List Of Active Doctors</h1>
     <Row>
     {doctors && doctors.map((doctor)=>(
       <DoctorList doctor ={doctor}/>

@@ -7,8 +7,6 @@ import axios from 'axios';
 import { Col, Form, Input, Row, TimePicker, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { showLoading,hideLoading } from '../../redux/features/alertSlice';
-
-
 const Profile = () => {
     const {user} =useSelector((state) =>state.user)
     const [doctor,setDoctor]=useState(null);

@@ -6,9 +6,12 @@ import { Link, useLocation, useNavigate,  } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Badge, message } from 'antd';
 const Layout = ({children}) => {
+
 const {user}=useSelector((state) => state.user);
 const location = useLocation();
 const navigate =useNavigate();
+
+console.log("User:", user);
 // logout function
 const handleLogout=() => {
     localStorage.clear()
@@ -18,7 +21,6 @@ const handleLogout=() => {
 }
 //===========doctor menu===========//
  const doctorMenu=[
-   
     {
      name:'Home',
      path:'/',
@@ -33,18 +35,20 @@ const handleLogout=() => {
     {
      name:'Profile',
      path: `/doctor/profile/${user && user.user_id}`,
+  
      icon:'fa-solid fa-user',
  
-    },
+    }, 
     
-   
  ];
 //===========doctor menu ==========//
 // rendering menu  list
-//const SidebarMenu = user && user.isAdmin ? adminMenu : userMenu;
-// const SidebarMenu =user?.isAdmin ? adminMenu : user?.isdoctor ? doctorMenu : userMenu;
-const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isdoctor ? doctorMenu : userMenu));
+// Corrected property name to match the user object
+console.log("Doctor Menu:", doctorMenu);
+const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isDoctor ? doctorMenu : userMenu));
+//const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isdoctor ? doctorMenu : userMenu));
 
+console.log("Sidebar Menu:", SidebarMenu);
   return (
     <div className="main"> 
         <div className="layout">
@@ -75,7 +79,7 @@ const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isdoctor ? doctorM
             </div>
             <div className="content">
                 <div className="header">
-                    <div className="header-content" style ={{cursor:"pointer"}}>
+                <div className="header-content" style ={{cursor:"pointer"}}>
                    
                     <Badge count ={user && user.Notification.length}
                      onClick={() =>{navigate('/notification')

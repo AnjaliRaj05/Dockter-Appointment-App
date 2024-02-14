@@ -62,7 +62,9 @@ try{
             <div className="d-flex justify-content-end ">
                <button><h4 className='p-2' onClick={handleMarkAllread}>
                   Mark All Read
-                  </h4></button>
+                  </h4>
+                  </button>
+                  
             </div>
 
              {user && user.Notification.map((NotificationMsgs)=>(

@@ -11,6 +11,7 @@ res.status(200).send({
     data:doctor,
 
 });
+
 } catch(error){ 
   console.log(error);
   res.status(500).send({
