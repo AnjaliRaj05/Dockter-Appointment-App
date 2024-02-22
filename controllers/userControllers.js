@@ -30,16 +30,18 @@ const registerController = async (req, res) => {
 const loginController = async (req, res) => {
   try {
     const user = await userModel.findOne({ email: req.body.email });
+    console.log('user not found' ,user);
     if (!user) {
       return res
         .status(200)
         .send({ message: "user not found", success: false });
+        
     }
     const isMatch = await bcrypt.compare(req.body.password, user.password);
     if (!isMatch) {
       return res
         .status(200)
-        .send({ message: "Invlid EMail or Password", success: false });
+        .send({ message: "Invalid EMail or Password", success: false });
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d"})
@@ -185,7 +187,7 @@ const bookAppointmentController=async(req,res)=>{
     req.body.status = 'pending';
     const newAppointment = new appointmentModel(req.body);
     await newAppointment.save();
-    const user = await userModel.findOne({_id: req.body. doctorInfo.userId});
+    const user = await userModel.findOne({_id: req.body.doctorInfo.userId});
     user.Notification.push({
       type:"New-appointment-request",
       message: `A New Appointment Request From ${req.body.userInfo.name}`,
@@ -238,6 +240,7 @@ res.status(500).send({
  });
 }
 }
+
 const appointmentsListController = async(req,res)=>
 {
   try{
@@ -261,5 +264,6 @@ const appointmentsListController = async(req,res)=>
     })
   }
 }
+
 
 module.exports={loginController,registerController,authController,applyDoctorController,getAllNotificationrController,deleteAllNotificationrController,getALLDoctorsController,bookAppointmentController,bookingAvaililityController,appointmentsListController};

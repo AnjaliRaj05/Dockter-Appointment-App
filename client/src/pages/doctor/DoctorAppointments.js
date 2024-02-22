@@ -14,6 +14,7 @@ export default function DoctorAppointments() {
           },
       });
       if(res.data.success){
+        
           setAppointments(res.data.data);
       }
      } catch (error){
@@ -46,29 +47,41 @@ export default function DoctorAppointments() {
             title :"ID",
             dataIndex: "_id",
         },
+        // {
+        //   title: "Patient Name",
+        //   dataIndex: "userInfo",
+        //   render: (text, record) => {
+        //     //console.log(record);
+        //    console.log('Patient Info:', record.userInfo);
+        //     // return <span>{record.userInfo.name}</span>;
+        //     return record.userInfo.name;
+
+        //   },
+        // },
         {
-            title :"Name",
-            dataIndex: "name",
-            render:(text,record)=>(
-                <span>
-                    {record.doctorId.firstName} {record.doctorId.lastName}
-                </span>
-            ),
-        },
-        {
-            title :"Phone",
-            dataIndex: "phone",
-            render:(text,record)=>(
-                <span>
-                    {record.doctorId.phone}
-                </span>
-            ),
-        },
+          title: 'Patient Name',
+          dataIndex: 'userInfo',
+          render: (text, record) => {
+              return record.userInfo.name;
+          },
+      },
+        
+        // {
+        //     title :"Phone",
+        //     dataIndex: "phone",
+        //     render:(text,record)=>(
+        //         <span>
+        //             {record.doctorId.phone}
+        //         </span>
+        //     ),
+        // },
         {
             title :"Date and Time",
             dataIndex: "date",
             render:(text,record)=>(
+              
                 <span>
+                  
                     {moment(record.date).format("DD-MM-YYYY")} &nbsp;
                     {moment(record.time).format("HH:mm")} 
                 </span>
@@ -97,6 +110,7 @@ export default function DoctorAppointments() {
   return (
     <Layout>
       <h1>Appointments List</h1>
+      
       <Table columns={columns} dataSource={appointments} />
     </Layout>
   );

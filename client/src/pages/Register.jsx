@@ -54,7 +54,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showLoading,hideLoading } from "../redux/features/alertSlice";
-
 const Register = () => {
 const  navigate=useNavigate();
 
@@ -102,6 +101,8 @@ const  navigate=useNavigate();
           <Link to="/login" className="m-2">
             Already user login here
           </Link>
+          
+
           <button className="btn btn-primary" type="submit">
             Register
           </button>

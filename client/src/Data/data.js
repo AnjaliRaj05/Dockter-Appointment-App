@@ -60,11 +60,11 @@ export const userMenu=[
 // Doctor menu
 export const doctorMenu=[
    
-   {
-    name:'Home',
-    path:'/',
-    icon:"fa-solid fa-house",
-   } ,
+   // {
+   //  name:'Home',
+   //  path:'/',
+   //  icon:"fa-solid fa-house",
+   // } ,
    {
     name:'Appointements',
     path:'/doctor-appointments',

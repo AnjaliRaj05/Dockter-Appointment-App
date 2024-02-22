@@ -1,7 +1,6 @@
 const appointmentModel = require('../models/appointmentModel');
 const doctorModel =require('../models/doctorModel');
 const userModel = require('../models/userModel');
-
 const getDoctorInfoController =async(req,res)=>{
     try{
 const doctor = await doctorModel.findOne({userId: req.body.userId });
@@ -59,27 +58,28 @@ try{
 }
 }
 const doctorAppointmentsController =async(req, res)=>{
-try{
-  const doctor = await doctorModel.findOne({userId:req.body.userId});
-  const appointments = await appointmentModel.find({
-    doctorId:doctor._id,
-  });
-  res.status(200).send({
-    success:true,
-    message:'Doctors Appointments feched sucessfully',
-    data: appointments,
-  });
-}
-  catch(error){
-    console.log(error);
-    res.status(500).send({
-      success:false,
-      error,
-      message:'Error in Doc Appointments',
+  try{
+    const doctor = await doctorModel.findOne({userId:req.body.userId});
+    const appointments = await appointmentModel.find({
+      doctorId:doctor._id,
     });
-  
-}
-};
+    res.status(200).send({
+      success:true,
+      message:'Doctors Appointments feched sucessfully',
+      data: appointments,
+    });
+  }
+    catch(error){
+      console.log(error);
+      res.status(500).send({
+        success:false,
+        error,
+        message:'Error in Doctor Appointments',
+      });
+    
+  }
+  };
+
 const updateStatusController =async(req,res)=>{
 try{
 const {appointmentsId,status} = req.body
@@ -88,7 +88,7 @@ const user = await userModel.findOne({_id:appointments.userId});
  const notification =  user.Notification;
   notification.push({
       type:"status-updated",
-      message: `your appointments has been updated ${status}`,
+      message: `your appointments has been  ${status}`,
       onclickPath:"/doctor-appointments",
     }); 
     await user.save();

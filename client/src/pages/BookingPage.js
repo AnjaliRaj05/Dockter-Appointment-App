@@ -275,11 +275,12 @@ const BookingPage = () => {
             {doctors && (
               <div>
                 <div className="txt-cnter">
+                  {/* <h1>{moment().format('dddd')} </h1> */}
                 <h4>Dr.{doctors.firstName} {doctors.lastName}</h4>
                 <h4>Experience: {doctors.experience}</h4>
                 <h4>Specialization: {doctors.specialization}</h4>
                 <h4>Fees: {doctors.feesPerConsulation}</h4>
-                <h4>Timings: {doctors.timings}</h4>
+                <h4>Timings: {doctors.timings}</h4>&nbsp;
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <DatePicker

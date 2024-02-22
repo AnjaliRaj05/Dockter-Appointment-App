@@ -24,25 +24,25 @@ const Users = () => {
     getUsers();
   },[]);
 
-  const blockUsers = async(userId)=>{
-    try {
-      // Send a request to the server to block the user
-      const res = await axios.post('/api/v1/admin/blockUser', { userId }, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
-      if (res.data.success) {
-        console.log('User blocked successfully.');
-        // Optionally, update the user list or perform other actions
-        getUsers();
-      } else {
-        console.error('Failed to block user:', res.data.message);
-      }
-    } catch (error) {
-      console.error('An error occurred:', error);
-    }
-  }
+  // const blockUsers = async(userId)=>{
+  //   try {
+  //     // Send a request to the server to block the user
+  //     const res = await axios.post('/api/v1/admin/blockUser', { userId }, {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`,
+  //       },
+  //     });
+  //     if (res.data.success) {
+  //       console.log('User blocked successfully.');
+  //       // Optionally, update the user list or perform other actions
+  //       getUsers();
+  //     } else {
+  //       console.error('Failed to block user:', res.data.message);
+  //     }
+  //   } catch (error) {
+  //     console.error('An error occurred:', error);
+  //   }
+  // }
   // antd table col
   const columns=[{
     title: 'Name',
@@ -75,6 +75,7 @@ const Users = () => {
     <Layout>
       <h1 className="text-center m-2">All Users List</h1>
       <Table columns={columns} dataSource={users}/>
+      
 
     </Layout>
   )

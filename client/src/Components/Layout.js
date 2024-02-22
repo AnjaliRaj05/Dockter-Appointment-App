@@ -11,7 +11,7 @@ const {user}=useSelector((state) => state.user);
 const location = useLocation();
 const navigate =useNavigate();
 
-console.log("User:", user);
+// console.log("User:", user);
 // logout function
 const handleLogout=() => {
     localStorage.clear()
@@ -21,11 +21,11 @@ const handleLogout=() => {
 }
 //===========doctor menu===========//
  const doctorMenu=[
-    {
-     name:'Home',
-     path:'/',
-     icon:"fa-solid fa-house",
-    } ,
+    // {
+    //  name:'Home',
+    //  path:'/',
+    //  icon:"fa-solid fa-house",
+    // } ,
     {
      name:'Appointements',
      path:'/doctor-appointments',
@@ -44,17 +44,17 @@ const handleLogout=() => {
 //===========doctor menu ==========//
 // rendering menu  list
 // Corrected property name to match the user object
-console.log("Doctor Menu:", doctorMenu);
+// console.log("Doctor Menu:", doctorMenu);
 const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isDoctor ? doctorMenu : userMenu));
 //const SidebarMenu = user && (user.isAdmin ? adminMenu : (user.isdoctor ? doctorMenu : userMenu));
 
-console.log("Sidebar Menu:", SidebarMenu);
+// 
   return (
     <div className="main"> 
         <div className="layout">
             <div className="sidebar">
                 <div className="logo">
-                    <h4>DOC APP</h4>
+                    <h4>DOCTOR APP</h4>
                     <hr/>
                     </div>
                 <div className="menu">
